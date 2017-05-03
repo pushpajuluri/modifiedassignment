@@ -1,37 +1,44 @@
 package weekendtest;
 
 public class Bicycle implements Ibicycle {
-	private boolean isMoving;
-	public int speed;
+	int currentSpeed;
+	boolean moving;
+
+	public Bicycle() {
+		moving = false;
+		currentSpeed = 0;
+	}
 
 	public Bicycle(int speed) {
-		isMoving = false;
-		this.speed = speed;
-	}
-
-	public boolean Bicycle(int speed) {
-		if (speed <= 0) {
-			isMoving = false;
+		if (speed > 0) {
+			moving = true;
+			currentSpeed = speed;
 		} else {
-			isMoving = true;
-
+			moving = false;
+			currentSpeed = 0;
 		}
-		return isMoving;
 	}
 
-	public boolean increaseSpeed() {
-		speed++;
-		return isMoving = true;
+	public void increaseSpeed() {
+		if (!moving) {
+			moving = true;
+			currentSpeed++;
+		}
 	}
 
-	public boolean decreaseSpeed() {
-		speed--;
-		return isMoving = false;
+	public void decreaseSpeed() {
+		if (moving) {
+			currentSpeed--;
+		if(currentSpeed==0)
+		
+			moving=false;
+		}
+
 	}
 
 	public boolean isMoving() {
-		
-		return false;
+		return moving;
 	}
+	
 
 }
