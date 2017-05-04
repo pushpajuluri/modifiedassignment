@@ -28,7 +28,19 @@ public class Quad {
 	public double getX2() { return x2; }
 	public double getX3() { return x3; }
 	public double getX4() { return x4; }
-
+public Quad solveBiquadratic(double a,double b,double c){
+		Pair quad=new Pair();
+		quad.solveQuadratic(a, b, c);
+		double x1=quad.getX();
+		double x2=quad.getX();
+		if((x1==Double.NaN)&&(x2==Double.NaN))
+				return  new Quad();
+				else
+					
+		
+		
+		return new Quad(-Math.sqrt(x1),Math.sqrt(x1),-Math.sqrt(x2),Math.sqrt(x2));
+	
 
 
 
