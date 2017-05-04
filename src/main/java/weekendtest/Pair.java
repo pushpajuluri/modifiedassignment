@@ -27,6 +27,9 @@ public class Pair implements Ipair {
 		double x1=0;
 		double x2=0;
 		if (discriminant < 0)
+			return new Pair();
+		else
+		{
 		
 			x1=(-b+Math.sqrt(discriminant))/(2*a);
 			x2=(-b-Math.sqrt(discriminant))/(2*a);
